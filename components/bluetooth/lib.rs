@@ -362,7 +362,7 @@ impl BluetoothManager {
         let devices = adapter.get_devices().unwrap_or_default();
         for device in &devices {
             if let Ok(address) = device.get_address() {
-                #[allow(clippy::map_entry)] // False positive, the fix creates a borrowing error
+                #[expect(clippy::map_entry)] // False positive, the fix creates a borrowing error
                 if !self.address_to_id.contains_key(&address) {
                     let generated_id = self.generate_device_id();
                     self.address_to_id.insert(address, generated_id.clone());
