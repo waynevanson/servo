@@ -4,7 +4,7 @@
 
 #![feature(rustc_private)]
 #![warn(rustc::internal)]
-#![allow(rustc::potential_query_instability)]
+#![expect(rustc::potential_query_instability)]
 
 // This rustc crates are private so they must be manually imported.
 extern crate rustc_ast;
