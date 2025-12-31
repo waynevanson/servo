@@ -26,7 +26,7 @@ impl SpecLinkMethods<crate::DomTypeHolder> for SpecLink {
     /// <https://example.com/>
     /// Doc comments are OK
     // Regular comments are OK
-    #[allow(attributes_too)]
+    #[expect(attributes_too)]
     fn Foo() {}
 }
 
