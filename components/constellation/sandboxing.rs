@@ -183,7 +183,7 @@ pub fn spawn_multiprocess(content: UnprivilegedContent) -> Result<Process, Error
 
     // TODO: Move this impl out of the function. It is only currently here to avoid
     // duplicating the feature flagging.
-    #[allow(non_local_definitions)]
+    #[expect(non_local_definitions)]
     impl CommandMethods for gaol::sandbox::Command {
         fn arg<T>(&mut self, arg: T)
         where
