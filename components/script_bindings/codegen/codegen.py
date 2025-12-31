@@ -7710,7 +7710,7 @@ impl{self.generic} Clone for {self.makeClassName(self.dictionary)}{self.genericS
             "}\n"
             "\n"
             f"impl{self.generic} {selfName}{self.genericSuffix} {{\n"
-            "    #[allow(clippy::wrong_self_convention)]\n"
+            "    #[expect(clippy::wrong_self_convention)]\n"
             "    pub unsafe fn to_jsobject(&self, cx: *mut RawJSContext, mut obj: MutableHandleObject) {\n"
             f"{CGIndenter(CGList(memberInserts), indentLevel=8).define()}    }}\n"
             "}\n"
