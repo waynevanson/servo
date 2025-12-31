@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
-#![allow(clippy::non_canonical_partial_ord_impl)]
+#![expect(clippy::non_canonical_partial_ord_impl)]
 use std::borrow::{Cow, ToOwned};
 use std::cell::{Ref, RefCell};
 use std::default::Default;
