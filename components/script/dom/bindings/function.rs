@@ -28,12 +28,12 @@ macro_rules! native_fn {
 macro_rules! native_raw_obj_fn {
     ($cx:expr, $call:expr, $name:expr, $nargs:expr, $flags:expr) => {{
         #[expect(unsafe_code)]
-        #[allow(clippy::macro_metavars_in_unsafe)]
+        #[expect(clippy::macro_metavars_in_unsafe)]
         unsafe extern "C" fn wrapper(cx: *mut JSContext, argc: u32, vp: *mut JSVal) -> bool {
             unsafe { $call(cx, argc, vp) }
         }
         #[expect(unsafe_code)]
-        #[allow(clippy::macro_metavars_in_unsafe)]
+        #[expect(clippy::macro_metavars_in_unsafe)]
         unsafe {
             let name: &std::ffi::CStr = $name;
             let raw_fun = js::jsapi::JS_NewFunction(
