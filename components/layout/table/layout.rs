@@ -1235,7 +1235,7 @@ impl<'a> TableLayout<'a> {
         row_sizes
     }
 
-    #[allow(clippy::ptr_arg)] // Needs to be a vec because of the function above
+    #[expect(clippy::ptr_arg)] // Needs to be a vec because of the function above
     /// After doing layout of table rows, calculate final row size and distribute space across
     /// rowspanned cells. This follows the implementation of LayoutNG and the priority
     /// agorithm described at <https://github.com/w3c/csswg-drafts/issues/4418>.
