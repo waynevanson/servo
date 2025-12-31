@@ -132,7 +132,7 @@ impl<T> Hash for LayoutDom<'_, T> {
 
 impl<T> Clone for LayoutDom<'_, T> {
     #[inline]
-    #[allow(clippy::non_canonical_clone_impl)]
+    #[expect(clippy::non_canonical_clone_impl)]
     fn clone(&self) -> Self {
         assert_in_layout();
         *self
